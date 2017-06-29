@@ -1,13 +1,17 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-
+import VueResource from 'vue-resource';
+import store from '../vuex/store';
+Vue.use(VueResource);
+Vue.http.options.credentials=true;
 Vue.use(Router);
 
-export default new Router({
+
+var route=new Router({
     routes: [
         {
             path: '/',
-            redirect: '/customer'
+            redirect: '/readme'
         },
         {
             path: '/readme',
@@ -72,12 +76,6 @@ export default new Router({
                 {
                     path:'/activitymarketing',
                     component: resolve => require(['../components/page/ActivityMarketing/ActivityMarketing.vue'], resolve),   // 活动营销组件
-                    children:[
-                        {
-                            path: '/text',
-                            component: resolve => require(['../components/page/ActivityMarketing/Text.vue'], resolve)    // 创建活动
-                         }
-                    ]
                 },
                 {
                     path:'/dialog',
@@ -90,4 +88,13 @@ export default new Router({
             component: resolve => require(['../components/page/Login.vue'], resolve)
         },
     ]
-})
+});
+route.beforeEach((to ,from ,next)=>{
+    if(!store.state.a.userIsLogin.isLogined){
+        store.dispatch('userIsLogined');
+        next();
+    }else{
+        next();
+    }
+});
+export default route;

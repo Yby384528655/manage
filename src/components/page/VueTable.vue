@@ -48,7 +48,7 @@
                     }
                 ],
                 query:''
-            }
+            };
         },
         components: {
             Datasource
@@ -69,15 +69,15 @@
                     if(d.name.indexOf(self.query) > -1){
                         return d;
                     }
-                })
+                });
             }
         },
         beforeMount(){
             axios.get('/static/data.json').then( (res) => {
                 this.information = res.data;
-            })
+            });
         }
-    }
+    };
 </script>
 
 <style src="../../../static/css/datasource.css"></style>

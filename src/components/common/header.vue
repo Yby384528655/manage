@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <div class="logo">
-            富通天下社交平台
+            实例
         </div>
         <div class="user-info">
             <el-dropdown trigger="click" @command="handleCommand">
@@ -21,7 +21,7 @@
         data() {
             return {
                 name: 'linxin'
-            }
+            };
         },
         computed:{
             username(){
@@ -32,12 +32,12 @@
         methods:{
             handleCommand(command) {
                 if(command == 'loginout'){
-                    localStorage.removeItem('ms_username')
+                    localStorage.removeItem('ms_username');
                     this.$router.push('/login');
                 }
             }
         }
-    }
+    };
 </script>
 <style scoped>
     .header {

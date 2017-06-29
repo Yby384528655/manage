@@ -14,6 +14,14 @@
     export default {
         components:{
             vHead, vSidebar
+        },
+        mounted(){
+            var url='https://snscn.joinf.com'+this.getApiList(this,'getaccount');
+            // var data={name:'123'};
+            var response=this.Apilist.ajax(url);
+            response.then(()=>{
+            }).catch(()=>{
+            });
         }
-    }
+    };
 </script>

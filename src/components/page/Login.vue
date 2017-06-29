@@ -34,7 +34,7 @@
                         { required: true, message: '请输入密码', trigger: 'blur' }
                     ]
                 }
-            }
+            };
         },
         methods: {
             submitForm(formName) {
@@ -44,15 +44,13 @@
                         localStorage.setItem('ms_username',self.ruleForm.username);
                         self.$router.push('/readme');
                     } else {
-                        console.log('error submit!!');
                         return false;
                     }
                 });
             }
         }
-    }
+    };
 </script>
-
 <style scoped>
     .login-wrap{
         position: relative;

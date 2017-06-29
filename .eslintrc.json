@@ -1,0 +1,34 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "extends": "eslint:recommended",
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "plugins": [
+        "html"
+    ],
+    "rules": {                  //规则
+        "indent": [                 //缩进：空格或tab
+            "error",
+            4
+        ],
+        // "linebreak-style": [     //换行符
+        //     "error"
+        // ],
+        "quotes": [                 //单引号、双引号
+            "error",
+            "single"
+        ],
+        "no-console": [             //是否有console
+            0
+        ],  
+        "semi": [                   //末尾分号
+            "error",
+            "always"
+        ]
+    }
+}

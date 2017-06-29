@@ -33,10 +33,10 @@
                         highlightingTheme: 'atom-one-light'
                     }
                 }
-            }
+            };
         },
         components: {
             markdownEditor
         }
-    }
+    };
 </script>

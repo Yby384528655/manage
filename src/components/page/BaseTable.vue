@@ -65,21 +65,21 @@
                     address: '东莞市长安镇步步高大道16号',
                     tag: '公司'
                 }]
-            }
+            };
         },
         methods: {
-            formatter(row, column) {
+            formatter(row) {
                 return row.address;
             },
             filterTag(value, row) {
                 return row.tag === value;
             },
-            handleEdit(index, row) {
+            handleEdit(index) {
                 this.$message('编辑第'+(index+1)+'行');
             },
-            handleDelete(index, row) {
+            handleDelete(index) {
                 this.$message.error('删除第'+(index+1)+'行');
             }
         }
-    }
+    };
 </script>

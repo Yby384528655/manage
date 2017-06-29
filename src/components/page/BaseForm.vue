@@ -71,12 +71,12 @@
                     resource: '小天才',
                     desc: ''
                 }
-            }
+            };
         },
         methods: {
             onSubmit() {
                 this.$message.success('提交成功！');
             }
         }
-    }
+    };
 </script>
